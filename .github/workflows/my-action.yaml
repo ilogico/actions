@@ -1,0 +1,14 @@
+name: My Action
+run-name: ${{github.actor}} is testing stuff
+on: [push]
+jobs:
+  Some-Job:
+    runs-on: ubuntu_latest
+    steps:
+      - run: echo "event_name ${{ github.event_name }}"
+      - run: echo "os ${{ runner.os }}"
+      - run: echo "ref ${{ github.ref }}"
+      - uses: actions/checkout@v3
+      - run: echo "repository ${{ github.repository }}"
+      - run: echo "workspace ${{ github.workspace }}"
+      - run: echo "status ${{ job.status }}"
